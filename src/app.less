@@ -1,0 +1,39 @@
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+html {
+  background-color: #000000;
+  font-size: 16px;
+  height: 100%;
+}
+
+html body {
+  height: 100%;
+  background-image: url('./resources/cloud9.png');
+  // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 0.03rem;
+}
+
+.ant-layout-content {
+  // background: linear-gradient(90deg, #b7ffcd 0%, #fcfcfc 47%, #9eefff 100%);
+  background-image: url('./resources/cloud9.png');
+  background-size: contain;
+}
+
+section.ant-layout {
+  background: none;
+}
+
+.loading-spinner {
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 400px) {
+  .ant-layout-content {
+    background-position-x: center;
+    background-size: cover;
+    height: 100vh;
+  }
+}

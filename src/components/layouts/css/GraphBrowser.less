@@ -1,0 +1,64 @@
+// @graph-background: linear-gradient(90deg, #b7ffcd 0%, #fcfcfc 47%, #9eefff 100%);
+// @graph-edge-color: #272727;
+// @node-fill-color: #000000;
+// @node-hover-fill-color: black;
+// @node-hover-border-color: #272727;
+// @node-border-color: #e7e7e7;
+// @node-text-color: #1b1b1b;
+// @node-hover-text-color: #56df44;
+// graph container
+@graph-background: linear-gradient(90deg, #000000 0%, #3a3a3a 47%, #06161a 100%);
+// @graph-background: linear-gradient(#f3f3f3 0%, #2e0c33 47%, #ffffff 100%);
+// @graph-edge-color: #272727;
+@graph-edge-color: #131313;
+// node dots
+@node-fill-color: #ffffff;
+@node-hover-fill-color: #f0ff99;
+@node-hover-border-color: #272727;
+@node-border-color: #fff019;
+// text
+@node-text-color: #dbdbdb;
+// @node-text-color: none;
+@node-hover-text-color: #b4ffbe;
+
+.graph-container {
+  height: 100vh;
+  // background: @graph-background;
+  background-image: url('../../../resources/cloud9.png');
+  background-size: cover;
+  border: 10px solid @graph-edge-color;
+}
+
+text.graph-text {
+  text-align: left;
+  fill: @node-text-color;
+  stroke: none;
+  transition: 1s;
+  fill: white;
+  font-size: 1.7rem;
+  color: black;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+}
+
+text.graph-text:hover {
+  fill: @node-hover-text-color;
+  transition-duration: 0.1s;
+}
+
+.graph-node {
+  color: black;
+  // stroke: white;
+  stroke: @node-border-color;
+  fill: @node-fill-color;
+}
+
+.graph-node:hover {
+  fill: @node-hover-fill-color;
+  stroke-width: 2px;
+}
+
+@media only screen and (max-width: 400px) {
+  .graph-container {
+    background-position-x: center;
+  }
+}

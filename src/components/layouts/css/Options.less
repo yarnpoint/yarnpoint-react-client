@@ -1,0 +1,206 @@
+.Options {
+  margin-bottom: 0.7rem;
+}
+
+.Options-card {
+  button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1rem;
+    cursor: pointer;
+  }
+
+  button:active,
+  button:focus {
+    outline: 0;
+  }
+}
+
+.Options-avatar {
+  width: 100%;
+  text-align: center;
+  margin-top: -8rem;
+  border-radius: 50%;
+}
+
+.Options-avatar img {
+  position: relative;
+  z-index: 5;
+  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
+  border: 2px solid #fafafa;
+  transition-duration: 0.5s;
+  opacity: 0.8;
+}
+
+.Options-avatar:hover img {
+  opacity: 0.6;
+}
+
+.Options-header {
+  height: 450px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  background-color: #272727;
+}
+
+.Options-header img {
+  object-fit: cover;
+  min-height: 100%;
+  min-width: 100%;
+  transition-duration: 0.5s;
+  opacity: 0.8;
+}
+
+.Options-header:hover img {
+  opacity: 0.6;
+}
+
+.Options-avatar:hover .Options-avatar-edit-icon {
+  color: #d6d6d6;
+  transition: 0.5s;
+}
+
+.Options-avatar-edit-icon {
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 6;
+  top: 28rem;
+  right: 0;
+}
+
+.Options-header:hover .Options-header-edit-icon {
+  color: #686868;
+  transition: 0.5s;
+}
+
+.Options-header-edit-icon {
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 6;
+  top: 15rem;
+  right: 0;
+}
+
+.Options-info {
+  margin-top: -2.3rem;
+  // background-color: #272727;
+  background-color: #cfcccc;
+  width: 100%;
+  padding: 3.4rem 10rem 0.3rem;
+  text-align: center;
+}
+
+.Options-display-name {
+  font-size: 1.1rem;
+  // color: white;
+  color: #272727;
+  width: 27%;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
+input.Options-display-name {
+  background-color: transparent;
+  border: 1px solid #7c7c7c;
+}
+
+input.Options-display-name:focus {
+  outline: none;
+}
+
+input.Options-display-name::placeholder {
+  color: #7c7c7c;
+}
+
+.Options-standard-input {
+  display: block;
+  font-size: 1.1rem;
+  // color: white;
+  color: #272727;
+  width: 27%;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
+input.Options-standard-input {
+  margin: 0.3rem auto;
+  background-color: transparent;
+  border: 1px solid #7c7c7c;
+}
+
+input.Options-standard-input:focus {
+  outline: none;
+}
+
+input.Options-standard-input::placeholder {
+  color: #7c7c7c;
+}
+
+.Options-bio {
+  // color: #f0f0f0;
+  color: #272727;
+  margin-top: 0.15rem;
+  margin-bottom: 0.1rem;
+  width: 100%;
+  text-align: center;
+  resize: none;
+  height: 4.5rem;
+  border-radius: 0.3rem;
+}
+
+textarea.Options-bio {
+  background-color: transparent;
+  border: 1px solid #7c7c7c;
+}
+
+textarea.Options-bio:focus {
+  outline: none;
+}
+
+textarea.Options-bio::placeholder {
+  color: #7c7c7c;
+}
+
+form.password-modal-form {
+  padding: 1rem;
+  display: inline-block;
+  text-align: center;
+}
+
+input.password-modal-field {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: inline-block;
+}
+
+// profile-specific media queries
+@media only screen and (max-width: 500px) {
+  .profile-modal {
+    max-width: 300px;
+  }
+
+  .Options-info {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .Options-display-name {
+    width: 80%;
+  }
+
+  .Options-standard-input {
+    width: 80%;
+  }
+}

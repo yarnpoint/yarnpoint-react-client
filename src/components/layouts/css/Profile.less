@@ -1,0 +1,128 @@
+.Profile {
+  margin-bottom: 0.7rem;
+}
+
+.profile-modal {
+  max-width: 500px;
+}
+
+.profile-modal img {
+  width: 100%;
+}
+
+.profile-modal .ant-modal-header {
+  text-align: center;
+}
+
+.profile-card {
+  button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  button:active,
+  button:focus {
+    outline: 0;
+  }
+}
+
+.Profile-avatar {
+  width: 100%;
+  text-align: center;
+  margin-top: -8rem;
+  border-radius: 50%;
+}
+
+.Profile-avatar img {
+  position: relative;
+  z-index: 5;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 9rem;
+  height: 9rem;
+  border: 2px solid #fafafa;
+  cursor: pointer;
+}
+
+.ant-modal-body {
+  padding: 0;
+}
+
+.ant-modal.profile-modal {
+  float: center;
+}
+
+.Profile-header {
+  height: 450px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  background-color: #272727;
+  cursor: default;
+}
+
+.Profile-header img {
+  object-fit: cover;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.Profile-header-edit-icon {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  z-index: 6;
+  top: 10rem;
+  left: 0.5rem;
+}
+
+.Profile-info {
+  margin-top: -2.3rem;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 3rem 0 0.3rem;
+  text-align: center;
+}
+
+.Profile-displayName {
+  color: #272727;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.Profile-username {
+  color: grey;
+  font-size: 0.9rem;
+}
+
+.Profile-bio {
+  color: #353535;
+  padding: 0.2rem 3rem 1rem;
+  margin-bottom: 0.1rem;
+}
+
+div.verified-sign-container {
+  display: inline-block;
+  position: relative;
+  top: 0.2rem;
+}
+
+svg.verified-sign {
+  width: 21px;
+  height: 21px;
+  // fill: #1da1f2;
+  fill: #3bcc43;
+}
+
+// profile-specific media queries
+@media only screen and (max-width: 500px) {
+  .profile-modal {
+    max-width: 300px;
+  }
+}
