@@ -410,7 +410,7 @@ class Help extends Component {
 								</a>{' '}
 								or reach out on{' '}
 								<a
-									href='https://www.twitter.com/synthona'
+									href='https://www.twitter.com/yarnpoint'
 									target='_blank'
 									rel='noopener noreferrer'
 								>
