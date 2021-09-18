@@ -406,7 +406,7 @@ class Help extends Component {
 									rel='noopener noreferrer'
 									type='email'
 								>
-									Yarnpoint@gmail.com
+									synthona@gmail.com
 								</a>{' '}
 								or reach out on{' '}
 								<a
