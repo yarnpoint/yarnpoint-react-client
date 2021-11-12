@@ -70,10 +70,10 @@ export default (state = INITIAL_STATE, action) => {
 					nodesArray.push(node);
 				}
 			});
-			if (nodesArray.length > 100) {
-				// if the length gets too long free up some memory
-				nodesArray.splice(0, action.payload.nodes.length);
-			}
+			// if (nodesArray.length > 100) {
+			// 	// if the length gets too long free up some memory
+			// 	nodesArray.splice(0, action.payload.nodes.length);
+			// }
 			return {
 				...state,
 				isFetching: null,
@@ -93,10 +93,10 @@ export default (state = INITIAL_STATE, action) => {
 					nodesArray.push(node);
 				}
 			});
-			if (nodesArray.length > 100) {
-				// if the length gets too long free up some memory
-				nodesArray.splice(0, action.payload.nodes.length);
-			}
+			// if (nodesArray.length > 100) {
+			// 	// if the length gets too long free up some memory
+			// 	nodesArray.splice(0, action.payload.nodes.length);
+			// }
 			return {
 				...state,
 				isFetching: null,
