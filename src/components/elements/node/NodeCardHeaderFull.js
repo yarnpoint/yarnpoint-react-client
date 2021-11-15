@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Icon, Modal, Tooltip, message } from 'antd';
 import { validUrl, isImageUrl } from '../../../utils/validation';
+import { isElectron } from '../../../utils/environment';
 import {
 	showComponent,
 	unpackImport,
@@ -265,20 +266,24 @@ class NodeCardHeaderFull extends Component {
 					</Tooltip>
 				);
 			case 'file':
-				return (
-					<Tooltip title={'replace preview image'} mouseEnterDelay={1.1}>
-						<li>
-							<button
-								onClick={(e) => {
-									// show the modal
-									this.setPreviewToLocalFilePath();
-								}}
-							>
-								<Icon type={'picture'} theme='outlined' className='full-card-button' />
-							</button>
-						</li>
-					</Tooltip>
-				);
+				if (isElectron()) {
+					return (
+						<Tooltip title={'replace preview image'} mouseEnterDelay={1.1}>
+							<li>
+								<button
+									onClick={(e) => {
+										// show the modal
+										this.setPreviewToLocalFilePath();
+									}}
+								>
+									<Icon type={'picture'} theme='outlined' className='full-card-button' />
+								</button>
+							</li>
+						</Tooltip>
+					);
+				} else {
+					return;
+				}
 			case 'audio':
 				return (
 					<Tooltip title={'replace preview image'} mouseEnterDelay={1.1}>
