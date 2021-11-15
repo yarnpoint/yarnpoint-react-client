@@ -24,7 +24,7 @@ class IOBar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			input: '',
+			input: this.props.query.searchQuery,
 			nodeTypes: this.props.query.type || 'all',
 			createType: null,
 			queryType: null,
