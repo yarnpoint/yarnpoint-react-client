@@ -38,25 +38,26 @@ class AssociationSider extends Component {
 		const nodeUUID = siderNode.uuid;
 		// associate the nodes
 		await this.props.createAssociation(nodeUUID, nodeUUIDToAssociate);
-		this.setState({ autocompleteOptions: null, autocompleteValues: null, inputText: '' });
+		this.setState({ autocompleteOptions: [], autocompleteValues: null, inputText: '' });
 		// re-render the autocomplete values so more can be added
 		this.renderAutocompleteValues('');
 	};
 
 	renderAutocompleteValues = async (input) => {
 		var siderNode = this.props.associationSiderData.content;
-		this.setState({ inputText: input || '' });
+		this.setState({ inputText: input });
 		const result = await this.props.associationAutocomplete({
 			searchQuery: input || '',
 			uuid: siderNode.uuid,
 		});
 		if (result) {
+			this.setState({
+				autocompleteValues: result.map((node) => {
+					return node;
+				}),
+			});
+
 			const newValues = result.map((node) => {
-				this.setState({
-					autocompleteValues: result.map((node) => {
-						return node;
-					}),
-				});
 				// return the options objects
 				return (
 					<Option key={node.uuid}>
@@ -104,7 +105,7 @@ class AssociationSider extends Component {
 							}}
 							placeholder='add association'
 							value={this.state.inputText}
-							// onChange={(value) => this.renderAutocompleteValues(value)}
+							onSearch={(value) => this.renderAutocompleteValues(value)}
 							onFocus={(value) => this.renderAutocompleteValues(value)}
 							onSelect={(value) => this.createAssociationHandler(value)}
 						>
