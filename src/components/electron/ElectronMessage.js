@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import ElectronSearch from './ElectronSearch';
 import { showComponent, hideComponent } from '../../api/redux/actions';
 import { message, Modal } from 'antd';
+import history from '../../utils/history';
 
 // a place to send & recieve messages to & from electron
 class ElectronMessage extends Component {
@@ -31,6 +32,10 @@ class ElectronMessage extends Component {
 					case 'search-all':
 						// autofocus on the search bar, if it is onscreen & not selected
 						if (document.getElementById('nav-primary-search')) {
+							window.scrollTo({ top: 0 });
+							document.getElementById('nav-primary-search').select();
+						} else {
+							history.push('/');
 							window.scrollTo({ top: 0 });
 							document.getElementById('nav-primary-search').select();
 						}
