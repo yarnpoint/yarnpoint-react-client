@@ -31,12 +31,8 @@ class ElectronMessage extends Component {
 					case 'search-all':
 						// autofocus on the search bar, if it is onscreen & not selected
 						if (document.getElementById('nav-primary-search')) {
-							if (document.getElementById('nav-primary-search') !== document.activeElement) {
-								document.getElementById('nav-primary-search').select();
-							} else {
-								// if search bar is already active, deselect it
-								document.getElementById('nav-primary-search').blur();
-							}
+							window.scrollTo({ top: 0 });
+							document.getElementById('nav-primary-search').select();
 						}
 						return;
 					case 'latest-version':

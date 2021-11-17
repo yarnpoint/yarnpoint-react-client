@@ -67,7 +67,8 @@ class IOBar extends Component {
 	};
 
 	// handle text input
-	commandHandler = () => {
+	commandHandler = (e) => {
+		e.target.blur();
 		switch (this.state.inputMode) {
 			case 'query':
 				return this.props.searchNodes({
@@ -253,7 +254,7 @@ class IOBar extends Component {
 						</li>
 						<li className='nav-search'>
 							<Input
-								onPressEnter={(value, event) => this.commandHandler()}
+								onPressEnter={(value, event) => this.commandHandler(value)}
 								maxLength={500}
 								value={this.state.input}
 								onChange={(e) => this.setState({ input: e.target.value })}
