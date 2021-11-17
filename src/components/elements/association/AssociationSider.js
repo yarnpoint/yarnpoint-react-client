@@ -103,7 +103,7 @@ class AssociationSider extends Component {
 							style={{
 								width: 200,
 							}}
-							placeholder='add association'
+							placeholder='create association'
 							value={this.state.inputText}
 							onSearch={(value) => this.renderAutocompleteValues(value)}
 							onFocus={(value) => this.renderAutocompleteValues(value)}

@@ -11,30 +11,42 @@ import { message, Modal } from 'antd';
 class ElectronMessage extends Component {
 	componentDidMount() {
 		// load up window.api.recieve function
-		window.api.receive('fromMain', (data) => {
-			switch (data.message) {
-				case 'search':
-					if (!this.props.electronSearchData) {
-						this.props.showComponent('electronSearch');
-					} else {
-						this.props.hideComponent('electronSearch');
-					}
-					return;
-				case 'update-available':
-					if (!this.props.updateAvailable) {
-						// message.success('an updated version of yarnpoint is available', 3);
-						this.props.showComponent('updateAvailable');
-					} else {
-						this.props.hideComponent('updateAvailable');
-					}
-					return;
-				case 'latest-version':
-					message.success('Yarnpoint Is Up To Date', 3);
-					return;
-				default:
-					break;
-			}
-		});
+		if (window.api) {
+			window.api.receive('fromMain', (data) => {
+				switch (data.message) {
+					case 'search':
+						if (!this.props.electronSearchData) {
+							this.props.showComponent('electronSearch');
+						} else {
+							this.props.hideComponent('electronSearch');
+						}
+						return;
+					case 'update-available':
+						if (!this.props.updateAvailable) {
+							this.props.showComponent('updateAvailable');
+						} else {
+							this.props.hideComponent('updateAvailable');
+						}
+						return;
+					case 'search-all':
+						// autofocus on the search bar, if it is onscreen & not selected
+						if (document.getElementById('nav-primary-search')) {
+							if (document.getElementById('nav-primary-search') !== document.activeElement) {
+								document.getElementById('nav-primary-search').select();
+							} else {
+								// if search bar is already active, deselect it
+								document.getElementById('nav-primary-search').blur();
+							}
+						}
+						return;
+					case 'latest-version':
+						message.success('Yarnpoint Is Up To Date', 2);
+						return;
+					default:
+						break;
+				}
+			});
+		}
 	}
 
 	renderElectronSearch = () => {

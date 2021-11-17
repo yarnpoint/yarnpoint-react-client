@@ -261,6 +261,7 @@ class IOBar extends Component {
 								placeholder={this.state.placeholder}
 								addonBefore={this.renderSelectBefore()}
 								className='nav-search-input'
+								id='nav-primary-search'
 							/>
 						</li>
 					</ul>
