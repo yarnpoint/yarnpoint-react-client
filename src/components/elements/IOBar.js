@@ -213,7 +213,7 @@ class IOBar extends Component {
 	render() {
 		return (
 			<div>
-				<Header className='page-header'>
+				<Header className='page-header' style={this.props.fixed ? { position: 'fixed' } : null}>
 					<ul className='nav-list'>
 						<li className='nav-item io-sider-button mobile-visible' style={{ marginRight: '0' }}>
 							<Button type='default' shape='circle' onClick={(e) => this.toggleMainSider()}>

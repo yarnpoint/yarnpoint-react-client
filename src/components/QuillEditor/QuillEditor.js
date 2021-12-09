@@ -8,6 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 import AssociationList from '../elements/association/AssociationList';
 import AssociationSider from '../elements/association/AssociationSider';
 import NodeCardHeaderFull from '../elements/node/NodeCardHeaderFull';
+import IOBar from '../elements/IOBar';
 // custom components
 import Spinner from '../elements/Spinner';
 // redux handlers
@@ -22,6 +23,7 @@ import {
 } from '../../api/redux/actions';
 // import custom editor css
 import './QuillEditor.less';
+import MainSider from '../elements/MainSider';
 // destructure antd components
 const { Content } = Layout;
 
@@ -321,7 +323,14 @@ class QuillEditor extends Component {
 	renderHeader = () => {
 		// Only render the header if the editor is  expanded
 		if (this.state.expanded === null && this.props.nodeData) {
-			return <NodeCardHeaderFull />;
+			return (
+				<div>
+					<div style={{ height: '3rem' }}>
+						<IOBar fixed={true} />
+					</div>
+					<NodeCardHeaderFull />
+				</div>
+			);
 		}
 	};
 
@@ -338,6 +347,12 @@ class QuillEditor extends Component {
 			this.regeneratePreview();
 		}
 	}
+
+	renderMainSider = () => {
+		if (this.props.mainSider) {
+			return <MainSider />;
+		}
+	};
 
 	componentWillUnmount() {
 		// clear styles
@@ -364,6 +379,7 @@ class QuillEditor extends Component {
 
 		return (
 			<Layout className='page-layout'>
+				{this.renderMainSider()}
 				<Content className={'text-editor-content ' + this.state.expanded}>
 					{this.renderHeader()}
 					<ReactQuill
@@ -396,6 +412,7 @@ const mapStateToProps = (state) => {
 	return {
 		nodeData: state.nodes.activeNode,
 		isLoading: state.nodes.isFetching,
+		mainSider: state.components.componentList['mainSider'],
 	};
 };
 
