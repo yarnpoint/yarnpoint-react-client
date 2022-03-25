@@ -47,7 +47,11 @@ const INITIAL_STATE = {
 	isDeleting: null,
 	nodeList: [],
 	totalItems: null,
-	query: { page: 1 },
+	query: {
+		page: 1,
+		sortOrder: localStorage.getItem('sortOrder') || 'DESC',
+		sortType: localStorage.getItem('sortType') || 'recent',
+	},
 	activeNode: null,
 };
 
@@ -100,7 +104,13 @@ export default (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				isFetching: null,
-				query: { page: 1, type: action.query.type, searchQuery: action.query.searchQuery },
+				query: {
+					page: 1,
+					type: action.query.type,
+					searchQuery: action.query.searchQuery,
+					sortType: action.query.sortType,
+					sortOrder: action.query.sortOrder,
+				},
 				totalItems: action.payload.totalItems,
 				nodeList: nodesArray,
 			};

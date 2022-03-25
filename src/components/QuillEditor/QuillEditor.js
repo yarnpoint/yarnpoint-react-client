@@ -174,7 +174,7 @@ class QuillEditor extends Component {
 	};
 
 	regeneratePreview = () => {
-		if (!this.state.deleting && !this.state.error && this.state.uuid !== null) {
+		if (!this.state.deleting && !this.state.error && this.state.uuid !== null && this.quill) {
 			const previewLength = 500;
 			const editor = this.quill.getEditor();
 			// process the text node
@@ -325,6 +325,9 @@ class QuillEditor extends Component {
 		if (this.state.expanded === null && this.props.nodeData) {
 			return (
 				<div>
+					{/* <div style={{ height: '3rem' }}>
+						<IOBar fixed={true} />
+					</div>*/}
 					<div style={{ height: '3rem' }}>
 						<IOBar fixed={true} />
 					</div>
