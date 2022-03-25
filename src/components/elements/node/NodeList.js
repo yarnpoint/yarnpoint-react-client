@@ -22,6 +22,8 @@ class NodeList extends Component {
 			page: 1,
 			type: this.props.query.type,
 			searchQuery: this.props.query.searchQuery,
+			sortType: this.props.query.sortType,
+			sortOrder: this.props.query.sortOrder,
 		});
 		window.addEventListener('scroll', this.infiniteScroll);
 	}
@@ -38,6 +40,8 @@ class NodeList extends Component {
 				page: this.props.query.page + 1,
 				type: this.props.query.type,
 				searchQuery: this.props.query.searchQuery,
+				sortType: this.props.query.sortType,
+				sortOrder: this.props.query.sortOrder,
 			});
 		}
 	};
@@ -64,6 +68,8 @@ class NodeList extends Component {
 				page: 1,
 				type: this.props.query.type,
 				searchQuery: this.props.query.searchQuery,
+				sortType: this.props.query.sortType,
+				sortOrder: this.props.query.sortOrder,
 			});
 		}
 		// if it's not the top of the page go ahead and fetch more
