@@ -40,7 +40,7 @@ li.nodelist-item {
   display: block;
   text-align: left;
   // height: 16rem;
-  height: 17rem;
+  height: 16rem;
   // width: 25rem;
   width: 32.5vw;
   overflow: hidden;
@@ -191,6 +191,7 @@ input.nodelist-item-title::selection {
   // background-color: #5c5c5c;
   background: linear-gradient(90deg, #b7ffcd 0%, #fcfcfc 47%, #9eefff 100%);
   min-height: 100%;
+  width: 100%;
 }
 
 .nodelist-collection-grid .node-card-icon {
@@ -225,7 +226,8 @@ input.nodelist-item-title::selection {
 
 .nodelist-collection-grid li {
   width: 50%;
-  height: 7.3rem;
+  // height: 7.6rem;
+  height: 6.6rem;
   overflow: hidden;
   // border: 0.01rem solid #636363;
   // border: 0.01rem dotted #2b2b2b;
@@ -240,6 +242,16 @@ input.nodelist-item-title::selection {
   height: 100%;
   // border: 0.07rem solid #4b4b4b;
   // border: 0.07rem solid #2b2b2b;
+}
+
+@media only screen and (max-width: 1650px) {
+  li.nodelist-item {
+    height: 16rem;
+  }
+
+  .nodelist-collection-grid li {
+    height: 6.6rem;
+  }
 }
 
 @media only screen and (max-width: 1400px) {
